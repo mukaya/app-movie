@@ -1,13 +1,17 @@
-import React from "react";
+import React,{useState} from "react";
 import { Navbar, Nav, Container, Form, FormControl } from "react-bootstrap";
 import { NavWrapper } from "./style";
 import { Link, useHistory } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
+import { useDispatch} from 'react-redux';
 
 export default function Navbars(){
+  const dispatch = useDispatch();
+  const [search, setSearch] = useState('');
   const history = useHistory();
-
-  const onRecherche = () => {
+  const onRecherche = (e) => {
+      setSearch(e.target.value);
+      dispatch({type:'SEARCH_FILM',payload:search});
       history.push('/recherche');
   }
   return (
@@ -20,14 +24,15 @@ export default function Navbars(){
           </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Form inline onSubmit={onRecherche}>
+            <Form inline>
               <FaSearch
               style={{cursor:'pointer'}}
-              onClick={onRecherche}/>
+              />
               <FormControl
                 type="text"
                 placeholder="Chercher votre films ici..."
                 className="mr-sm-1"
+                onChange={onRecherche}
               />
             </Form>
             <Nav className="ml-auto">
