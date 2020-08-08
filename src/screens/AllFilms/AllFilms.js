@@ -3,7 +3,6 @@ import { ContainerCard } from './style';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Pagination from '../../components/Pagination';
-import Chargement from '../../components/Chargement';
 
 const AllFilms = () => {
     const [dataFilms, setDataFilms] = useState([]);
@@ -18,6 +17,7 @@ const AllFilms = () => {
             setLoading(true);
             setDataFilms(res.data.results);
             setLoading(false);
+            console.log(res.data.results);
         })
         .catch(err => {
             console.error(err); 
@@ -36,7 +36,7 @@ const AllFilms = () => {
     return (
         <ContainerCard>  
         <div className="ligne"> 
-        {!loading ?
+        {
             currentFilm.map(film=>{
                 return(
                     <div className="card" key={film.id}>
@@ -46,10 +46,10 @@ const AllFilms = () => {
                             {film.original_title}
                         </p>
                         <Link to={`/films/${film.id}`} className="btn">Voir le detail</Link>
-                    </div>
+                        </div>
                     </div>
                 )
-            }): <Chargement/>
+            })
         }
         </div>
         <div style={{margin:'0 auto', width:'50px'}}>

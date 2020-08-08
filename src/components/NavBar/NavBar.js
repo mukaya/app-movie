@@ -1,10 +1,15 @@
 import React from "react";
 import { Navbar, Nav, Container, Form, FormControl } from "react-bootstrap";
 import { NavWrapper } from "./style";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
 
-export default function Navbars() {
+export default function Navbars(){
+  const history = useHistory();
+
+  const onRecherche = () => {
+      history.push('/recherche');
+  }
   return (
     <NavWrapper>
       <Container>
@@ -15,8 +20,10 @@ export default function Navbars() {
           </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Form inline>
-              <FaSearch />
+            <Form inline onSubmit={onRecherche}>
+              <FaSearch
+              style={{cursor:'pointer'}}
+              onClick={onRecherche}/>
               <FormControl
                 type="text"
                 placeholder="Chercher votre films ici..."
@@ -29,6 +36,9 @@ export default function Navbars() {
               </Link>
               <Link to="/allfilms" className="nav-link">
                 Films
+              </Link>
+              <Link to="/allseries" className="nav-link">
+                Series
               </Link>
             </Nav>
           </Navbar.Collapse>
