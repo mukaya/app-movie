@@ -11,7 +11,7 @@ const AllFilms = () => {
     const [filmsByPage] = useState(10);
 
     const getAllFilms = async () => {
-        let apiKey = "02689249b40636b114a2add6006bff65";
+        let apiKey = "de08f93ecdae7e1e97d442421d8f6997";
         axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=en-US&page=1`)
         .then(res => {
             setLoading(true);

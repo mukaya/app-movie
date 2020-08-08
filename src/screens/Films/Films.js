@@ -6,7 +6,7 @@ export default function SingleMoviesPage(props) {
   const [movie, setMovie] = useState({});
   useEffect(() => {
     Axios.get(
-      `https://api.themoviedb.org/3/movie/${props.match.params.id}?api_key=02689249b40636b114a2add6006bff65&language=en-US`
+      `https://api.themoviedb.org/3/movie/${props.match.params.id}?api_key=de08f93ecdae7e1e97d442421d8f6997&language=en-US`
     )
       .then(res => {
         setMovie(res.data);
@@ -62,51 +62,6 @@ export default function SingleMoviesPage(props) {
             </ul>
           </div>
         </div>
-        {/* <div className="row">
-          <div className="card card-body bg-dark my-5 text-light">
-            <div className="col-md-12">
-              <h3>About </h3>
-              {movie.Plot}
-              <hr />
-              <a
-                href={'https://www.imdb.com/title/' + movie.imdbID}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-primary"
-              >
-                View on IMDB
-              </a>
-              <Link to="/" className="btn btn-default text-light">
-                Go Back To Search
-              </Link>
-            </div>
-          </div>
-        </div> */}
       </div>
-    // <Container className="mt-5">
-    //   <Row>
-    //     <Col md="6">
-    //       <img
-    //         src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-    //         alt=""
-    //       />
-    //     </Col>
-    //     <Col md="6">
-    //       <h2>{movie.title}</h2>
-    //       <p>{movie.overview}</p>
-    //       <ul>
-    //         <li>Revenue:{movie.revenue}</li>
-    //         <li>Popularity:{movie.popularity}</li>
-    //         <li>original_language:{movie.original_language}</li>
-    //         <li>
-    //           Generes:
-    //           {Array.isArray(movie.genres) &&
-    //             movie.genres.map(el => <span className="ml-2">{el.name}</span>)}
-    //         </li>
-    //         <li>release_date:{movie.release_date}</li>
-    //       </ul>
-    //     </Col>
-    //   </Row>
-    // </Container>
   );
 }
