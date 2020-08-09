@@ -9,8 +9,8 @@ import Spinner from '../../components/Spinner';
 const AllFilms = () => {
     const [dataFilms, setDataFilms] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [filmsByPage] = useState(10);
-
+    const [filmsByPage] = useState(8);
+  
     const getAllFilms = async () => {
         axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${APIKey}&language=en-US`)
         .then(res => {
