@@ -56,8 +56,8 @@ const Recherche = () => {
                : <Spinner/>
            }
             </div>
-            <div style={{margin:'0 auto', width:'50px'}}>
-                <Pagination filmsByPage={filmsByPage} totalFilm={dataFilms.length} paginate={paginate}/>
+            <div style={{margin:'20px auto', width:'50px'}}>
+                <Pagination filmsByPage={filmsByPage} totalFilm={dataFilms.length} paginate={paginate} currentPage={currentPage}/>
             </div>
         </ContainerCard>
     )

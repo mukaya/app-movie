@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Spinner from './Spinner';
 
 export default function Carousel({ movie }) {
   
@@ -28,7 +29,9 @@ export default function Carousel({ movie }) {
         </Row>
       </div>
       <Slider {...settings}>
-        {movie.map(function(movie) {
+        {
+        movie.length ?
+        movie.map(function(movie) {
           return (
             <Fragment key={movie.id}>
               <Link to={`/films/${movie.id}`}>
@@ -44,6 +47,7 @@ export default function Carousel({ movie }) {
             </Fragment>
           );
         })
+        : <Spinner/>
       }
       </Slider>
     </Container>

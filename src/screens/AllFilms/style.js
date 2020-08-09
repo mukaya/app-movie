@@ -16,6 +16,7 @@ margin: 100px auto;
         margin-bottom: 50px;
         transition: 0.3s;
         margin:5px;
+        border:3 solid #C4C4C4;
       }
 }
 .card{
