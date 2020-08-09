@@ -8,6 +8,7 @@ const FooterFixed = styled.div`
   width: 100%;
   background-color: #2B3B51;
   text-align: center;
+  z-index:5;
   p{
     color: #C4C4C4;
     font-size: 26px;

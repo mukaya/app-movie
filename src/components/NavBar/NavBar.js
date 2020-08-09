@@ -17,7 +17,7 @@ export default function Navbars(){
   return (
     <NavWrapper>
       <Container>
-        <Navbar expand="lg" fixed="top" style={{background:'#2B3B51',marginBottom:'100px'}}>
+        <Navbar expand="lg" style={{background:'#2B3B51',marginBottom:'100px',position:"fixed",top:0,left:0,width:'100%',zIndex:2}}>
           <Link to="/" style={{color:'#C4C4C4', fontSize:'26px', fontWeight:900}}> 
             {/* <img src="/image/logo.svg" /> */}
             BEST FIMLS
@@ -41,9 +41,6 @@ export default function Navbars(){
               </Link>
               <Link to="/allfilms" className="nav-link">
                 Films
-              </Link>
-              <Link to="/allseries" className="nav-link">
-                Series
               </Link>
             </Nav>
           </Navbar.Collapse>

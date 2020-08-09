@@ -3,21 +3,18 @@ import { ContainerCard } from './style';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Pagination from '../../components/Pagination';
+import {APIKey} from '../../APIKey';
+import Spinner from '../../components/Spinner';
 
 const AllFilms = () => {
     const [dataFilms, setDataFilms] = useState([]);
-    const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [filmsByPage] = useState(10);
 
     const getAllFilms = async () => {
-        let apiKey = "de08f93ecdae7e1e97d442421d8f6997";
-        axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=en-US&page=1`)
+        axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${APIKey}&language=en-US`)
         .then(res => {
-            setLoading(true);
             setDataFilms(res.data.results);
-            setLoading(false);
-            console.log(res.data.results);
         })
         .catch(err => {
             console.error(err); 
@@ -25,7 +22,7 @@ const AllFilms = () => {
     }
     useEffect(()=>{
         getAllFilms();
-    },[]);
+    },[dataFilms]);
 
     const indexOfLastFilm = currentPage * filmsByPage;
     const indexOfFistFilm = indexOfLastFilm - filmsByPage;
@@ -37,6 +34,7 @@ const AllFilms = () => {
         <ContainerCard>  
         <div className="ligne"> 
         {
+            currentFilm.length ?
             currentFilm.map(film=>{
                 return(
                     <div className="card" key={film.id}>
@@ -50,6 +48,7 @@ const AllFilms = () => {
                     </div>
                 )
             })
+            : <Spinner/>
         }
         </div>
         <div style={{margin:'0 auto', width:'50px'}}>

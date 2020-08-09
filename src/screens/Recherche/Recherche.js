@@ -3,45 +3,35 @@ import Spinner from '../../components/Spinner';
 import { ContainerCard } from '../AllFilms/style';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { useDispatch ,useSelector } from 'react-redux';
+import {useSelector } from 'react-redux';
+import {APIKey} from '../../APIKey';
 
 const Recherche = () => {
-    const dispatch = useDispatch();
-    const {dataSearch} = useSelector((state)=>{
+    let {dataSearch} = useSelector((state)=>{
         return state.dataFilms;
     });
-    const {loading} = useSelector((state)=>{
-        return state.dataFilms;
-    });
-    console.log(loading);
     const [dataFilms, setDataFilms] = useState([]);
     const getAllFilms = async () =>{
-        dispatch({type:"LOADING",payload:true})
-        let apiKey = "de08f93ecdae7e1e97d442421d8f6997";
-        await axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=en-US&page=1`)
+        await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${APIKey}&query=${dataSearch}`)
         .then(res => {
             setDataFilms(res.data.results);
-            dispatch({type:"LOADING",payload:false})
         })
         .catch(err => {
             console.error(err); 
         })
-    }
+   }
     useEffect(()=>{
         getAllFilms();
-    },[]);
-    const filmsFind = dataFilms.filter((film) => {
-        return film.original_title.toLowerCase().includes(dataSearch.toLowerCase());  
-      });
+    },[dataSearch]);
     return (
         <ContainerCard>
             <div className="ligne">
            {
-              filmsFind.length ? filmsFind.map(film=>{
+              dataFilms.length ? dataFilms.map(film=>{
                    return(
                        <Fragment>
                         <div className="card" >
-                            <img style={{width:'100%'}} src={`https://image.tmdb.org/t/p/w500/${film.poster_path}`} alt=""/>
+                            <img style={{width:'100%'}} src={`${film.poster_path ? `https://image.tmdb.org/t/p/w500/${film.poster_path}`:null}`} alt=""/>
                             <div className="card-body">
                             <p>
                                 {film.original_title}

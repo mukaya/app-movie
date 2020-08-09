@@ -20,5 +20,4 @@ const Pagination = ({ filmsByPage, totalFilm, paginate}) => {
       </nav>
     )
 }
-
 export default Pagination;

@@ -1,16 +1,9 @@
 const initialState = {
-    dataFilms:[],
     loading:false,
     dataSearch: ''
 }
-
 export const filmReducer = (state = initialState, action)=>{
     switch(action.type){
-      case 'GET_FILM':
-          return {
-              ...state,
-              dataFilms:action.payload
-          }
       case 'LOADING':
           return {
               ...state,
