@@ -25,7 +25,7 @@ const FooterFixed = styled.div`
 function Footer() {
   return (
           <FooterFixed>
-            <h2><span style={{color:"blue"}}>BEST</span> FILMS</h2> 
+            <h2><span style={{color:"blue"}}>BEST FILMS</span></h2> 
             <p>Vous Chercher Toujours le Meilleur site pour voir des films complets en streaming 
               gratuit avec un contenu régulièrement mise à jour dont vous trouvez une sélection
                variée pour tous les goûts Gratuitement. Vous êtes à présent sur le bon site de film 

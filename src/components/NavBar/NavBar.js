@@ -19,7 +19,7 @@ export default function Navbars(){
       <Container>
         <Navbar expand="lg" style={{background:'#2B3B51',marginBottom:'100px',position:"fixed",top:0,left:0,width:'100%',zIndex:2}}>
           <Link to="/" style={{color:'#C4C4C4', fontSize:'26px', fontWeight:900}}> 
-            <span style={{color:"blue"}}>BEST</span> FIMLS
+            <span style={{color:"blue"}}>BEST FIMLS</span>
           </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
