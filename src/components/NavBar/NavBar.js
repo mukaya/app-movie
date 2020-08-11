@@ -19,7 +19,8 @@ export default function Navbars(){
       <Container>
         <Navbar expand="lg" style={{background:'#2B3B51',marginBottom:'100px',position:"fixed",top:0,left:0,width:'100%',zIndex:2}}>
           <Link to="/" style={{color:'#C4C4C4', fontSize:'26px', fontWeight:900}}> 
-            <span style={{color:"blue"}}>BEST FIMLS</span>
+            <img src="https://icons.iconarchive.com/icons/hadezign/hobbies/256/Movies-icon.png" alt="" style={{width:50}}/>
+            <span style={{color:"#C4C4C4"}}>BEST FIMLS</span>
           </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -29,7 +30,7 @@ export default function Navbars(){
               />
               <FormControl
                 type="text"
-                placeholder="Chercher votre films ici..."
+                placeholder="Chercher votre film ici..."
                 className="mr-sm-1"
                 onChange={onRecherche}
               />
