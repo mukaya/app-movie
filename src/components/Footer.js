@@ -27,19 +27,7 @@ function Footer() {
           <FooterFixed>
             <img src="https://icons.iconarchive.com/icons/hadezign/hobbies/256/Movies-icon.png" alt="" style={{width:50}}/>
             <h2><span style={{color:"#C4C4C4"}}>BEST FILMS</span></h2> 
-            <p>Vous Chercher Toujours le Meilleur site pour voir des films complets en streaming 
-          gratuit avec un contenu régulièrement mise à jour dont vous trouvez une sélection
-          variée pour tous les goûts Gratuitement. Vous êtes à présent sur le bon site de film 
-          streaming complet. BestFilm est un site de films en Streaming français qui vous garanti 
-          un catalogue rempli des films en version français (vf), par ailleurs nous vous réservons 
-          constamment des nouvelles sorties des films Streaming avec une bonne qualité.
-          Aucune ouverture de compte n'est nécessaire pour voir un film streaming complet. 
-          De nombreux film complet vip sont ajoutés chaque jour,
-          Envie de voir un film gratuit N'hésitez pas à ajouter film complet à vos favoris. 
-          Peu import si vous chercher des films classsiques ou des nouveaux films 2020 Nous 
-          vous offrons toujours des films en streaming complets gratuits 100% en français.
-          FilmsRip est une plateforme de film streaming (Site Streaming Fiable) complet de
-          longue date et Parmi le top des meilleurs sites gratuits de streaming en 2019 - 2020.</p>   
+               
           </FooterFixed>
   );
 }
