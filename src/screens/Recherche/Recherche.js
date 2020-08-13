@@ -41,15 +41,9 @@ const Recherche = () => {
               currentFilm.length ? currentFilm.map(film=>{
                    return(
                        <Fragment>
-                        <div className="card" >
-                            <img style={{width:'100%'}} src={`${film.poster_path ? `https://image.tmdb.org/t/p/w500/${film.poster_path}`:null}`} alt=""/>
-                            <div className="card-body">
-                            <p>
-                                {film.original_title}
-                            </p>
-                            <Link to={`/films/${film.id}`} className="btn">Voir le detail</Link>
-                        </div>
-                        </div>
+                        <Link className="card" to={`/films/${film.id}`}>
+                            <img style={{width:'100%', height:'100%'}} src={`${film.poster_path ? `https://image.tmdb.org/t/p/w500/${film.poster_path}`:null}`} alt=""/>
+                        </Link>
                        </Fragment>
                    );
                })

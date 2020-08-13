@@ -37,15 +37,9 @@ const AllFilms = () => {
             currentFilm.length ?
             currentFilm.map(film=>{
                 return(
-                    <div className="card" key={film.id}>
-                        <img style={{width:'100%'}} src={`https://image.tmdb.org/t/p/w500/${film.poster_path}`} alt=""/>
-                        <div className="card-body">
-                        <p>
-                            {film.original_title}
-                        </p>
-                        <Link to={`/films/${film.id}`} className="btn">Voir le detail</Link>
-                        </div>
-                    </div>
+                    <Link className="card" key={film.id} to={`/films/${film.id}`}>
+                        <img style={{width:'100%',height:'100%'}} src={`https://image.tmdb.org/t/p/w500/${film.poster_path}`} alt=""/>
+                    </Link>
                 )
             })
             : <Spinner/>
