@@ -26,7 +26,7 @@ function Footer() {
   return (
           <FooterFixed>
             <img src="https://icons.iconarchive.com/icons/hadezign/hobbies/256/Movies-icon.png" alt="" style={{width:50}}/>
-            <h5><span style={{color:"#C4C4C4"}}>BEST FILMS</span></h5> 
+            <h5><span style={{color:"#C4C4C4", fontSize:'16px'}}>BEST FILMS</span></h5> 
                
           </FooterFixed>
   );
